@@ -45,7 +45,6 @@ const postUser = (req, res) => {
       console.error(err);
       res.status(500).send("Error saving the user");
     });
-
 }
 
 module.exports = {
