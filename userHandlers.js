@@ -74,6 +74,4 @@ module.exports = {
   getUserById,
   postUser,
   updateUser,
-  validateUser,
-  validateUniqueEmail
 };

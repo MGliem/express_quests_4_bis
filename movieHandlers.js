@@ -75,5 +75,4 @@ module.exports = {
   getMovieById,
   postMovie,
   updateMovie,
-  validateMovie,
 };
