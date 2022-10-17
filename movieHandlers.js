@@ -1,28 +1,4 @@
 const database = require("./database");
-const joi = require('joi');
-
-const movieSchema = joi.object({
-  title: joi.string().max(255).required(),
-  director: joi.string().max(255).required(),
-  year: joi.string().max(255).alphanum().required(),
-  color: joi.boolean().required(),
-  duration: joi.number().integer().required(),
-});
-
-const validateMovie = (req, res, next) => {
-  const { title, director, year, color, duration } = req.body;
-
-  const { error } = movieSchema.validate(
-    { title, director, year, color, duration },
-    { abortEarly: false }
-  );
-
-  if (error) {
-    res.status(422).json({ validationErrors: error.details });
-  } else {
-    next();
-  };
-};
 
 const getMovies = (req, res) => {
   database
